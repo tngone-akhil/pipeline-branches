@@ -1,0 +1,16 @@
+body{
+  margin:0
+}
+input[type="password"]::-webkit-text-bullet 
+{  display: inline-block;  width: 10px;  height: 10px;  background: #c70e0e; /* Bullet color */  border-radius: 50%; /* Make it round */  margin-right: 5px; /* Space between bullets */}
+
+.MuiListItemIcon-root.css-cveggr-MuiListItemIcon-root {
+  min-width: 32px !important;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  border-radius: 12px;
+}
+.active-button{
+  background-color: #0368E9 !important;
+  color: white !important;
+}
