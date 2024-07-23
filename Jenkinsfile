@@ -35,7 +35,7 @@ pipeline {
                     }
 
                     // Move build artifacts to the designated directory
-                    bat "copy /Y \"${workspacePath}\\build\\*\" \"${buildFilesDir}\""
+                    bat "copy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\""
                        bat "xcopy /Y \"${workspacePath}\\build\\*\" \"${buildFilesDir}\"/E"
 
                     // Display paths of saved files
