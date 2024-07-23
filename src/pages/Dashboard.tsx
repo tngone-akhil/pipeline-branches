@@ -248,7 +248,7 @@ function Dashboard() {
       <Grid item xs={12} container direction="row" justifyContent="space-between" alignItems="center">
         <Box>
           <Typography sx={{ fontSize: '20px', fontWeight: '500', color: '#060606' }}>
-            Good Morning
+            Good Morning Akhil
           </Typography>
         </Box>
         <Box display="flex" gap={'12px'}>
