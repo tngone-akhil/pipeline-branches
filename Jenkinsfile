@@ -16,39 +16,11 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the React application
+                bat"""
+                ${env.CHANGE_ID}
+                """
                 bat 'npm run build'
                 
-            }
-        }
-    }
-    post {
-        always {
-            script {
-                try {
-                    bat"
-                    ${env.CHANGE_ID}
-                    "
-                    // def workspacePath = env.WORKSPACE
-                    // def buildFilesDir = "${workspacePath}\\build-files" // Example target directory
-
-                    // // Create directory if it doesn't exist
-                    // // if (!new File(buildFilesDir).exists()) {
-                    // //     bat "mkdir \"${buildFilesDir}\""
-                    // // }
-
-                    // // Move build artifacts to the designated directory
-                    // bat "copy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\""
-                    //    bat "xcopy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\"/E"
-
-                    // // Display paths of saved files
-                    // echo "Build files saved in directory: ${buildFilesDir}"
-                    // echo "Files saved"
-                    // bat "dir \"${buildFilesDir}\""
-                } catch (Exception e) {
-                    echo "Error in post-build actions: ${e.message}"
-                    currentBuild.result = 'FAILURE' // Mark build as failure
-                    throw e // Throw the exception to terminate the script
-                }
             }
         }
     }
