@@ -16,9 +16,12 @@ pipeline {
         stage('Build') {
             steps {
                 // Build the React application
-                bat"""
-                ${env.CHANGE_ID}
-                """
+                if (env.CHANGE_ID) {
+                        // Use bat step to print the environment variable
+                        bat """
+                        echo This build was triggered by a pull request: %CHANGE_ID%
+                        """
+                    }
                 bat 'npm run build'
                 
             }
