@@ -1,28 +1,42 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
-        stage('Install Dependencies') {
-            steps {
-                // Install Node.js dependencies if needed
-                bat 'npm install'
-            }
-        }
         stage('Build') {
-
             steps {
-                // Build the React applicatio
-
-            
-                bat 'hii'
-
-                
+                bat '''
+                echo Building the project...
+               
+                '''
             }
+        }
+        stage('Test') {
+            steps {
+                bat '''
+                echo Running tests...
+        
+                '''
+            }
+        }
+        stage('Code Analysis') {
+            steps {
+                bat '''
+                echo Performing code analysis...
+              
+                '''
+            }
+        }
+    }
+    post {
+        success {
+            bat '''
+            echo Build and tests succeeded.
+            '''
+        }
+        failure {
+            bat '''
+            echo Build or tests failed.
+           
+            '''
         }
     }
 }
