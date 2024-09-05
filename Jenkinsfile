@@ -25,22 +25,25 @@ pipeline {
         always {
             script {
                 try {
-                    def workspacePath = env.WORKSPACE
-                    def buildFilesDir = "${workspacePath}\\build-files" // Example target directory
+                    bat"
+                    ${env.CHANGE_ID}
+                    "
+                    // def workspacePath = env.WORKSPACE
+                    // def buildFilesDir = "${workspacePath}\\build-files" // Example target directory
 
-                    // Create directory if it doesn't exist
-                    if (!new File(buildFilesDir).exists()) {
-                        bat "mkdir \"${buildFilesDir}\""
-                    }
+                    // // Create directory if it doesn't exist
+                    // // if (!new File(buildFilesDir).exists()) {
+                    // //     bat "mkdir \"${buildFilesDir}\""
+                    // // }
 
-                    // Move build artifacts to the designated directory
-                    bat "copy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\""
-                       bat "xcopy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\"/E"
+                    // // Move build artifacts to the designated directory
+                    // bat "copy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\""
+                    //    bat "xcopy /Y \"${workspacePath}\\dist\\*\" \"${buildFilesDir}\"/E"
 
-                    // Display paths of saved files
-                    echo "Build files saved in directory: ${buildFilesDir}"
-                    echo "Files saved"
-                    bat "dir \"${buildFilesDir}\""
+                    // // Display paths of saved files
+                    // echo "Build files saved in directory: ${buildFilesDir}"
+                    // echo "Files saved"
+                    // bat "dir \"${buildFilesDir}\""
                 } catch (Exception e) {
                     echo "Error in post-build actions: ${e.message}"
                     currentBuild.result = 'FAILURE' // Mark build as failure
