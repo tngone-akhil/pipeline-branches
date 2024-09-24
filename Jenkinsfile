@@ -5,7 +5,7 @@ pipeline {
             steps {
                 bat '''
                 echo Building the project...
-                REM Add your build steps here
+                REM Add your build ste here
                 '''
             }
         }
