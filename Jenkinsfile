@@ -5,7 +5,9 @@ pipeline {
             steps {
                 bat '''
                 echo Building the project...
+
                 REM Add your build ste here
+
                 '''
             }
         }
@@ -13,7 +15,8 @@ pipeline {
             steps {
                 bat '''
                 echo Running tests...
-                REM Add your test steps here
+ REM Add your test steps here
+
                 '''
             }
         }
@@ -21,10 +24,11 @@ pipeline {
             steps {
                 bat '''
                 echo Performing code analysis...
+
                 REM Add your code analysis steps here
                 this is qa branch
                 '''
-                
+
             }
         }
     }
@@ -37,7 +41,9 @@ pipeline {
         failure {
             bat '''
             echo Build or tests failed.
+
             REM Add actions for failure cases, e.g., notify users
+
             '''
         }
     }
