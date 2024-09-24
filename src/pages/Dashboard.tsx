@@ -75,6 +75,7 @@ function Dashboard() {
       setFromDate(fromdateString)
     } else {
       setFromDate('0001-01-01')
+          console.log("hello");
     }
     if (inputToDate !== null) {
       const tdate = new Date(inputToDate);
