@@ -22,6 +22,7 @@ pipeline {
                 bat '''
                 echo Performing code analysis...
                 REM Add your code analysis steps here
+                this is qa branch
                 '''
                 
             }
