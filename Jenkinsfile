@@ -5,9 +5,7 @@ pipeline {
             steps {
                 bat '''
                 echo Building the project...
-
                 REM Add your build ste here
-
                 '''
             }
         }
@@ -15,8 +13,7 @@ pipeline {
             steps {
                 bat '''
                 echo Running tests...
- REM Add your test steps here
-
+                 REM Add your test steps here
                 '''
             }
         }
