@@ -13,6 +13,7 @@ pipeline {
             steps {
                 bat '''
                 echo Running twestin tests...
+                reacyt projedct
                  REM Add your test steps here
                 '''
             }
