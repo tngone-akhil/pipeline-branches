@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 bat '''
-                echo Running tests...
+                echo Running twestin tests...
                  REM Add your test steps here
                 '''
             }
